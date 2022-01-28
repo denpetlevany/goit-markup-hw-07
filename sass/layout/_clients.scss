@@ -1,0 +1,55 @@
+// Весь этот код можно написать с помощью конкатенации так?
+//.clients {
+//  &-header {}
+//  &-icon {}
+//  &-list {
+//    &-item {
+//      &-link {
+//        &:hover, &focus {}
+//           }
+//         }
+//      }
+//   }
+
+.clients__header {
+  color: var(--primary-text-color);
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.16;
+  text-align: center;
+  letter-spacing: 0.03em;
+  margin-bottom: 50px;
+}
+
+.clients-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-left: -30px;
+}
+
+.clients-list__item {
+  margin-left: 30px;
+}
+
+.clients-list__item-link {
+  @extend %align-justify-center;
+  width: 170px;
+  height: 90px;
+  border: 1px solid #afb1b8;
+  box-sizing: border-box;
+  border-radius: 4px;
+  fill: var(--icon-color);
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover,
+  &:focus {
+    color: var(--accent-color);
+    fill: var(--accent-color);
+    cursor: pointer;
+    border: 1px solid var(--accent-color);
+  }
+}
+
+.clients-list__icon {
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
